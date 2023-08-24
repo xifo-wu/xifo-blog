@@ -16,6 +16,14 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  background-color: #000;
+  overflow: hidden;
+  margin: 0;
+  padding: 12px;
+  height: 100vh;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -26,3 +34,16 @@ a {
     color-scheme: dark;
   }
 }
+
+/* 隐藏页面内容容器滚动条 Start */
+.page-container {
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.page-container::-webkit-scrollbar {
+  display: none; /* Chrome Safari Edge */
+}
+/* 隐藏页面内容容器滚动条 End */

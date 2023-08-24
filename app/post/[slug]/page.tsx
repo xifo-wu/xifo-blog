@@ -1,4 +1,4 @@
-import { initHexo } from '@/hexo';
+import { initHexo } from '@/lib/hexo';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
@@ -19,7 +19,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
   // 直接在 React 组件中调用 Hexo 的 API
   const post = hexo.database.model('Post').findOne({ slug: slug });
-  console.log(post, 'postpost');
+  console.log(post.categories, 'postpost');
 
   if (!post) {
     // 找不到 post 时返回 404 not found
@@ -27,15 +27,14 @@ export default async function PostPage({ params }: { params: { slug: string } })
   }
 
   return (
-    <article>
-      <h1>{post.title}</h1>
-      {post.path}
-
-      <div
+    <div>
+      <h1 className="mx-auto lg:text-lg">{post.title}</h1>
+      <article
+        className="mx-auto"
         dangerouslySetInnerHTML={{
           __html: post.content,
         }}
       />
-    </article>
+    </div>
   );
 }

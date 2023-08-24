@@ -1,4 +1,4 @@
-import { initHexo } from '@/hexo';
+import { initHexo } from '@/lib/hexo';
 import { basename } from 'path';
 
 // 获取所有文章的路径，供 Next.js 的 getStaticPaths 构建路径索引时使用

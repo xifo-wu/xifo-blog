@@ -2,6 +2,8 @@ import './globals.css';
 import '@/lib/highlight/light.css';
 import type { Metadata } from 'next';
 import { Providers } from './providers';
+import PageContainer from '@/components/PageContainer';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,7 +14,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning lang="zh-Hans">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <PageContainer>
+            <Header />
+            <div className="container mx-auto">{children}</div>
+          </PageContainer>
+        </Providers>
       </body>
     </html>
   );

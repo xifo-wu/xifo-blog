@@ -3,13 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Xifo
-subtitle: '学习笔记'
+title: Xifo's Blog
+subtitle: 学习笔记
 description: '记录自己折腾的过程，以及一些没啥用的代码片段，项目等'
-keywords:
+keywords: 代码,博客
 author: Xifo
 language: zh-Hans
 timezone: 'Asia/Shanghai'
+avatar: https://www.gravatar.com/avatar/1e005bb217912a9d7262f8e7a22abaad?s=256
+github: https://github.com/xifo-wu
+
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -57,7 +60,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 1
   order_by: -date
 
 # Category & Tag

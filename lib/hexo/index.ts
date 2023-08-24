@@ -1,18 +1,16 @@
-// @ts-ignore
 import Hexo from 'hexo';
 import fs from 'fs'
 import {join} from 'path'
 import { cache } from 'react'
 
-console.log(cache, "cachecache")
 let __SECRET_HEXO_INSTANCE__: Hexo | null = null;
 
-export const initHexo = async () => {
+export const initHexo = cache(async () => {
   if (__SECRET_HEXO_INSTANCE__) {
     return __SECRET_HEXO_INSTANCE__;
   }
   const hexo = new Hexo(process.cwd(), {
-    // silent: true,
+    silent: true,
     // 在 next dev 时包含草稿
     draft: process.env.NODE_ENV !== 'production'
   });
@@ -27,9 +25,11 @@ export const initHexo = async () => {
   await hexo.init();
   await hexo.load();
 
+  // @ts-ignore
   if (hexo.env.init && hexo._dbLoaded) {
     if (!fs.existsSync(dbPath)) {
       if (process.env.NODE_ENV === 'production') {
+        // @ts-ignore
         await hexo.database.save();
       }
     }
@@ -37,6 +37,6 @@ export const initHexo = async () => {
 
   __SECRET_HEXO_INSTANCE__ = hexo;
   return hexo;
-};
+});
 
 
