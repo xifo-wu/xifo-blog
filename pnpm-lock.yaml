@@ -22,12 +22,6 @@ dependencies:
     version: 18.2.0(react@18.2.0)
 
 devDependencies:
-<<<<<<< Updated upstream
-  '@types/hexo':
-    specifier: ^3.8.8
-    version: 3.8.8
-=======
->>>>>>> Stashed changes
   '@types/lodash-es':
     specifier: ^4.17.8
     version: 4.17.8
@@ -320,22 +314,6 @@ packages:
     engines: {node: '>= 10'}
     dev: true
 
-  /@types/bluebird@3.5.38:
-    resolution: {integrity: sha512-yR/Kxc0dd4FfwtEoLZMoqJbM/VE/W7hXn/MIjb+axcwag0iFmSPK7OBUZq1YWLynJUoWQkfUrI7T0HDqGApNSg==}
-    dev: true
-
-  /@types/bunyan@1.8.8:
-    resolution: {integrity: sha512-Cblq+Yydg3u+sGiz2mjHjC5MPmdjY+No4qvHrF+BUhblsmSfMvsHLbOG62tPbonsqBj6sbWv1LHcsoe5Jw+/Ow==}
-    dependencies:
-      '@types/node': 20.5.1
-    dev: true
-
-  /@types/connect@3.4.35:
-    resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
-    dependencies:
-      '@types/node': 20.5.1
-    dev: true
-
   /@types/eslint-scope@3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
@@ -352,24 +330,6 @@ packages:
 
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
-    dev: true
-
-  /@types/hexo-util@0.6.5:
-    resolution: {integrity: sha512-iEu8Z9jCsc1HMdkRz9GXuBajNWNw0VjxGfNOZW3dJWjpp1geg0cGZRM9+DDiTwWMTgdGyUYflvzSlPWCTHRRGQ==}
-    dependencies:
-      '@types/node': 20.5.1
-    dev: true
-
-  /@types/hexo@3.8.8:
-    resolution: {integrity: sha512-xwe6UHW1rqMlawyfDSBBhI7s3tOmMHJFghklJ0SjabaQys7Yj/XCITUDLSGYG/SpvfDt+YTeVPWQ2Dt0LQiLTA==}
-    dependencies:
-      '@types/bluebird': 3.5.38
-      '@types/bunyan': 1.8.8
-      '@types/connect': 3.4.35
-      '@types/hexo-util': 0.6.5
-      '@types/minimist': 1.2.2
-      '@types/underscore': 1.11.7
-      moment: 2.29.4
     dev: true
 
   /@types/json-schema@7.0.12:
@@ -390,13 +350,6 @@ packages:
     resolution: {integrity: sha512-BMVOiWs0uNxHVlHBgzTIqJYmj+PgCo4euloGF+5m4okL3rEYzM2EEv78mw8zWSMM57dM7kVIgJ2QDvwHSoCI5g==}
     dev: true
 
-<<<<<<< Updated upstream
-  /@types/minimist@1.2.2:
-    resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
-    dev: true
-
-=======
->>>>>>> Stashed changes
   /@types/node@20.5.1:
     resolution: {integrity: sha512-4tT2UrL5LBqDwoed9wZ6N3umC4Yhz3W3FloMmiiG4JwmUJWpie0c7lcnUNd4gtMKuDEO4wRVS8B6Xa0uMRsMKg==}
     dev: true
@@ -421,10 +374,6 @@ packages:
 
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
-    dev: true
-
-  /@types/underscore@1.11.7:
-    resolution: {integrity: sha512-uXFrH3+/R8AkckdYPJdmJm537rAOWOUt4DW3ni2l2GdXe1YrdREqab6lqsq1hm76xEihV39/qTxKIevNpZw2Zg==}
     dev: true
 
   /@typescript-eslint/parser@6.4.1(eslint@8.47.0)(typescript@5.1.6):
