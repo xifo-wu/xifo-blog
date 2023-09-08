@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  images: {
+    unoptimized: true,
+  },
   distDir: 'dist',
   webpack: (config, options) => {
     config.module.rules.push(

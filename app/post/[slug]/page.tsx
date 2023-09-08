@@ -19,7 +19,6 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
   // 直接在 React 组件中调用 Hexo 的 API
   const post = hexo.database.model('Post').findOne({ slug: slug });
-  console.log(post.categories, 'postpost');
 
   if (!post) {
     // 找不到 post 时返回 404 not found

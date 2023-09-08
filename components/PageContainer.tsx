@@ -5,7 +5,7 @@ interface PageContainerProps {
 }
 
 const PageContainer = ({ children }: PageContainerProps) => {
-  return <div className="relative h-full p-4 overflow-y-auto bg-white rounded-lg w-hull page-container">{children}</div>;
+  return <div className="relative h-full p-4 overflow-y-auto rounded-lg w-hull">{children}</div>;
 };
 
 export default PageContainer;

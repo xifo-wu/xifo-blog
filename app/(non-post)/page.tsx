@@ -22,10 +22,9 @@ async function fetchData() {
 export default async function Home() {
   const { posts } = await fetchData();
 
-  console.log(posts.length, "length")
-
   return (
     <main className="container mx-auto">
+      test
     </main>
   )
 }
