@@ -6,12 +6,10 @@ import CalendarDays from '@/components/Icons/CalendarDays';
 import Tag from '@/components/Icons/Tag';
 
 export async function generateStaticParams() {
-  // 初始化 Hexo
-  const hexoInstance = await initHexo();
+  const hexo = await initHexo();
 
   // 获取所有文章数据
-  const posts = hexoInstance.locals.get('posts').data;
-
+  const { data: posts } = hexo.database.model('Post').find({});
   return posts.map((item: { slug: any }) => ({
     slug: item.slug,
   }));
