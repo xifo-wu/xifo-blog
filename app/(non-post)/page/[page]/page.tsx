@@ -1,10 +1,12 @@
 import Pagination from '@/components/Pagination';
 import PostCard from '@/components/PostCard';
 import { getArticlesByIndex, getPaginationByIndex } from '@/lib/hexo/apis';
+import React from 'react';
 
-export default async function Home() {
-  const posts = await getArticlesByIndex(1);
-  const pagination = await getPaginationByIndex(1);
+const PostPage = async ({ params }: { params: { page: string } }) => {
+  const { page } = params;
+  const posts = await getArticlesByIndex(parseInt(page));
+  const pagination = await getPaginationByIndex(page);
 
   return (
     <main className="container mx-auto">
@@ -16,4 +18,6 @@ export default async function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default PostPage;

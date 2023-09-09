@@ -1,0 +1,12 @@
+.toc {
+  padding: 4px;
+}
+
+.toc :global(.toc-link) {
+  display: block;
+  padding: 4px 0;
+}
+
+.toc :global(.toc-item:not(.toc-level-2)) {
+  margin-left: 16px;
+}

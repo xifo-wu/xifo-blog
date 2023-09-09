@@ -1,5 +1,9 @@
-import { initHexo } from '.';
+// @ts-nocheck
+import hexoIndexGenerator from 'hexo-generator-index/lib/generator';
+import toc from 'hexo/lib/plugins/helper/toc';
 import getWordCount from './getWordCount';
+import { stripHTML } from 'hexo/lib/plugins/helper/format';
+import { initHexo } from '.';
 
 function countWordsAndFormat(wordCount: number) {
   if (wordCount > 10000) {
@@ -24,7 +28,7 @@ export async function getPostInfo() {
     wordCount += cd + en;
   }
 
-  const [count, wordCountUnit] = countWordsAndFormat(wordCount)
+  const [count, wordCountUnit] = countWordsAndFormat(wordCount);
 
   return {
     postCount,
@@ -32,5 +36,66 @@ export async function getPostInfo() {
     categoryCount: categories.length,
     wordCount: count,
     wordCountUnit,
+  };
+}
+
+export async function getArticlesByIndex(index: number) {
+  const hexo = await initHexo();
+  const data = hexoIndexGenerator.call(hexo, hexo.locals.toObject());
+  let matchIndexPage = data.find((item: any) => item.data.current == index);
+
+  return matchIndexPage.data.posts.find({}).map((post: any) => {
+    return {
+      ...post,
+      title: post.title,
+      date: post.date.format('YYYY-MM-DD'),
+      updated: post.updated.format('YYYY-MM-DD'),
+      articlePath: post.articlePath,
+      more: post.more,
+      excerpt: post.excerpt || stripHTML(post.content).substring(0, 200) + '……',
+      tags: post.tags.find({}).map((item) => item.name),
+      categories: post.categories.find({}).map((item) => item.name),
+      slug: post.slug,
+    };
+  });
+}
+
+export async function getPaginationByIndex(index) {
+  const hexo = await initHexo();
+  const data = hexoIndexGenerator.call(hexo, hexo.locals.toObject());
+  let matchIndexPage = data.find((item) => item.data.current == index);
+
+  return {
+    path: matchIndexPage.path,
+    base: matchIndexPage.data.base,
+    total: matchIndexPage.data.total,
+    current: matchIndexPage.data.current,
+    current_url: matchIndexPage.data.current_url,
+    prev: matchIndexPage.data.prev,
+    prev_link: matchIndexPage.data.prev_link,
+    next: matchIndexPage.data.next,
+    next_link: matchIndexPage.data.next_link,
+  };
+}
+
+export async function findPostBySlug(slug: string) {
+  const hexo = await initHexo();
+
+  // 直接在 React 组件中调用 Hexo 的 API
+  const post = hexo.database.model('Post').findOne({ slug: slug });
+
+  const [cn, en] = getWordCount(post.content);
+  const wordCount = cn + en;
+
+  return {
+    ...post,
+    date: post.date.format('YYYY-MM-DD'),
+    updated: post.updated.format('YYYY-MM-DD'),
+    wordCount,
+    categories: post.categories.find({}).map((item) => item.name),
+    toc: toc(post.content, {
+      list_number: false,
+      // max_depth: 4,
+    }),
   };
 }

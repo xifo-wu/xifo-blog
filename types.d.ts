@@ -1,12 +1,5 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import "hexo"
+import 'hexo';
 
-declare module 'hexo' {
-  // export const database: any;
-=======
-=======
->>>>>>> Stashed changes
 declare module 'hexo' {
   // Type definitions for hexo 3.8
   // Project: https://hexo.io/
@@ -1087,8 +1080,4 @@ declare module 'hexo' {
   }
 
   export = Hexo;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }

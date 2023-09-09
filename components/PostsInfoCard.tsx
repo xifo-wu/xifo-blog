@@ -14,7 +14,7 @@ const PostsInfoCard = async () => {
     (await getPostInfo()) || {};
 
   return (
-    <div className="flex items-center justify-around gap-4 p-4 bg-white rounded-md dark:bg-slate-900">
+    <div className="flex items-center justify-between gap-4 p-4 bg-white rounded-md dark:bg-slate-900">
       <CardItem value={postCount} label="文章" />
       <CardItem value={categoryCount} label="分类" />
       <CardItem value={tagCount} label="标签" />
