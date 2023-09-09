@@ -31,7 +31,7 @@ const PostCard = ({ data }: PostCardProps) => {
             <Tag className="w-4 h-4 text-slate-500" aria-label="分类" />
             <span className="block ml-2 text-sm text-slate-500">
               {data.categories.map((item: string) => (
-                <div>{item}</div>
+                <div key={item}>{item}</div>
               ))}
             </span>
           </div>
