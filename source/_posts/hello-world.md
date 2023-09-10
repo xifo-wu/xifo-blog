@@ -2,6 +2,7 @@
 title: 关于我一时兴起想建立的博客网站
 excerpt: 这个地方是我记录自己的折腾过程、分享一些看似没什么用、不起眼的代码片段和项目的地方。我非常高兴能够与大家分享我的学习和实践经验！在这里，我不会提供教程，仅仅是我的学习笔记。
 sticky: 1
+date: 2023-09-09 10:22:44
 cover: https://images.unsplash.com/photo-1693314872521-95d94790d59f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80
 categories:
   - 笔记
