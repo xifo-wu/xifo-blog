@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import CalendarDays from '@/components/Icons/CalendarDays';
+import Tag from '@/components/Icons/Tag';
 import { initHexo } from '@/lib/hexo';
 import { findPostBySlug } from '@/lib/hexo/apis';
 import { notFound } from 'next/navigation';
-import CalendarDays from '@/components/Icons/CalendarDays';
-import Tag from '@/components/Icons/Tag';
+import styles from './page.module.css';
 
 export async function generateStaticParams() {
   const hexo = await initHexo();
@@ -31,8 +32,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
           <Image src={post.cover} fill alt={post.title} className="object-cover" />
         </div>
       )}
-      <div className="p-4">
-        <h1 className="mb-2 text-base font-semibold md:text-xl">{post.title}</h1>
+      <div className="p-6">
+        <h1 className="mb-6 text-3xl font-semibold">{post.title}</h1>
 
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <div className="flex items-center">
@@ -51,7 +52,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
         </div>
 
         <article
-          className="mx-auto"
+          className={`${styles.article} mx-auto mt-6`}
           dangerouslySetInnerHTML={{
             __html: post.content,
           }}
