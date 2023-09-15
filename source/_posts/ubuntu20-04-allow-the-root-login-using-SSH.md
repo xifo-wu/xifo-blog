@@ -25,6 +25,9 @@ sudo passwd root
 2. 修改配置
 
 ```bash
+# 没有 openssh 的话需要安装
+sudo apt install openssh-server
+
 sudo vim /etc/ssh/sshd_config
 
 # >>>>> 找到 PermitRootLogin 修改为
