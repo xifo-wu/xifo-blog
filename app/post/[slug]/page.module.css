@@ -5,6 +5,10 @@
   font-size: 14px;
 }
 
+:global(.dark) .article {
+  color: #94a3b8;
+}
+
 .article blockquote {
   margin: 8px 0;
   display: block;
@@ -202,7 +206,6 @@
   margin-left: 24px;
   list-style-type: decimal;
 }
-
 
 .article a {
   color: #3b82f6;

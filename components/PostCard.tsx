@@ -11,7 +11,7 @@ const PostCard = ({ data }: PostCardProps) => {
   return (
     <div
       key={data.slug}
-      className="mb-4 overflow-hidden bg-white rounded-md dark:bg-slate-950"
+      className="mb-4 overflow-hidden bg-white rounded-md dark:bg-slate-900"
     >
       {!!data.cover && (
         <div className="aspect-w-3 aspect-h-1">
@@ -39,7 +39,7 @@ const PostCard = ({ data }: PostCardProps) => {
         <p className="mt-2 text-sm text-gray-500 sm:text-base">{data.excerpt}</p>
 
         <div className="flex items-center justify-between mt-3">
-          <Link href={data.path} className="px-3 py-2 text-sm rounded-md bg-blue-50">
+          <Link href={data.path} className="px-3 py-2 text-sm rounded-md bg-blue-50 dark:bg-blue-950">
             继续阅读
           </Link>
           <div className="text-xs text-gray-500">最后修改于：{data.updated}</div>
