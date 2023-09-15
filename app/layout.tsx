@@ -20,23 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="container mx-auto">{children}</div>
           </PageContainer>
         </Providers>
-
-        {/* TODO APP 查看案例写法 */}
-        {process.env.NODE_ENV === 'production' && (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                var _hmt = _hmt || [];
-                (function() {
-                  var hm = document.createElement("script");
-                  hm.src = "https://hm.baidu.com/hm.js?f5f184c47aeb4306db0ff5ccce7c1e2b";
-                  var s = document.getElementsByTagName("script")[0];
-                  s.parentNode.insertBefore(hm, s);
-                })();
-            `,
-            }}
-          />
-        )}
       </body>
     </html>
   );
